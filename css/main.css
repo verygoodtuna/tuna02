@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+u1 {
+    list-style: fixed;
+}
+
+
+.header {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 999;
+
+}
+
+nav {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translate(0, -50%);
+    z-index: 999;
+}
+
+nav a {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 30px;
+    font-size: 0;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 30px;
+    height: 5px;
+    background-color: #4aca3e;
+    transition: 0.5s;
+}
+
+nav li.on a::after {
+    width: 50px;
+    height: 5px;
+}
+
+
+.section .inner {
+    display: flex;
+    gap: 30px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.section figure {
+    position: relative;
+    width: 300px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 10px solid #4aca3e;
+
+    transform: translate(200, 100px);
+}
+
+.section figure img {
+    width: 100%;
+}
+
+.section figure::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    width: 40px;
+    height: 20px;
+}
+
+
+.section h2 {
+    text-align: center;
+    transform: translate(100px, 0);
+}
+
+.section on h2 {
+    text-align: center;
+    opacity: 0;
+    transform: translate(-100px, 0);
+    transition: 0.5s 1s;
+}
+
+.section p {
+    text-align: center;
+    transform: translate(100px, 0);
+}
+
+.section.on p {
+    text-align: center;
+    transform: translate(0, 0);
+    opacity: 1;
+}
